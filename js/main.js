@@ -17,25 +17,18 @@ console.log("Array numeri della cpu: " + arrayNumeriCpu);
 var numeroUtente;
 var punto = 1;
 var score = 0;
-for (var i = 1; i <= 4; i++) {
+var contatore = 0;
+
+do {
   numeroUtente = parseInt(prompt("inserisci un numero da 1 a 100"));
   console.log("giro " + i + " numero utente " + numeroUtente);
-  //confronto i numeri inseriti fino a trovare se c'è il numero che combacia
-  //con quelli generati dalla cpu
-  if (arrayNumeriCpu.includes(numeroUtente) || i > 2) {
-    //Se combacia la partita termina
-    console.log("Eisto partita: TERMINATA");
-    alert("terminata");
+  score += punto;
+  contatore ++;
+  console.log("valore contatore: " + contatore)
 
-  }
-  else {
-    console.log("Eisto partita: CONTINUA");
-    score += punto;
-    console.log("score " + score);
+} while (!arrayNumeriCpu.includes(numeroUtente) && contatore < 2);
 
-  }
-}
-console.log("score finale : " +score);
+console.log("score finale : " + score);
 
 
 //Se inserisce un numero vietato la partita termina (numeri vietati 16)
