@@ -18,9 +18,9 @@ console.log("Array numeri della cpu: " + arrayNumeriCpu);
 var numeroUtente;
 //funzione gestione errore numeroUtente
 function errorNumber(numeroUtente){
-  var controllo;
+  var controllo = false;
   if (numeroUtente < 1 || numeroUtente > 100) {
-    controllo = "Numero non valido, inserisci numero da 1 a 100";
+    controllo = true;
   }
   return controllo;
 }
@@ -30,11 +30,16 @@ var contatore = 0;
 do {
   numeroUtente = parseInt(prompt("inserisci un numero da 1 a 100"));
   var erroreInserimento = errorNumber(numeroUtente);
-  alert(erroreInserimento);
-  console.log("giro " + i + " numero utente " + numeroUtente);
-  score += punto;
-  contatore ++;
-  console.log("valore contatore: " + contatore)
+  console.log(erroreInserimento);
+  if (erroreInserimento) {
+    alert('Numero non valido, inserisci numero da 1 a 100!');
+  }
+  else {
+    console.log("giro " + i + " numero utente " + numeroUtente);
+    score += punto;
+    contatore ++;
+    console.log("valore contatore: " + contatore)
+  }
 } while
  (!arrayNumeriCpu.includes(numeroUtente) && contatore < 2);
 alert("partita terminata");
