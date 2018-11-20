@@ -22,11 +22,26 @@ function errorNumberDifficolta(livelloDifficolta){
   if (livelloDifficolta < 1 || livelloDifficolta > 2  || isNaN(livelloDifficolta)) {
     controllo = true;
   }
-  else {
-    alert('no');
-  }
   return controllo;
 }
+
+//funzione per il controllo numeri uguali nell'array
+//  NON FUNZIONANTE///////////////////////
+function controlloArray(arrayNumeriCpu,numeroCpu){
+  var array2 = [];
+  for (var i = 0; i < arrayNumeriCpu.length; i++) {
+    for (var i = 0; i < array2.length; x++) {
+      if(arrayNumeriCpu[i] === newArr[x]) {
+        arrayNumeriCpu.pop(numeroCpu)
+      }
+    }
+  }
+  return array2;
+}
+////////////////////////////////////////////////////////
+
+
+//controllo se il livello di difficolta inserito è corretto
 var erroreLivelloDifficolta = errorNumberDifficolta(livelloDifficolta);
 if (erroreLivelloDifficolta) {
   alert('Inserisci il livello giusto, da 0 a 2!');
@@ -74,10 +89,10 @@ else {
       console.log("valore contatore: " + contatore)
     }
   } while
-   (!arrayNumeriCpu.includes(numeroUtente) && contatore < 2);
+   (!arrayNumeriCpu.includes(numeroUtente) && contatore < 100);
 
   alert("partita terminata");
-  console.log("score finale : " + score);
+  document.writeln("score finale : " + score);
 }
 //Se inserisce un numero vietato la partita termina (numeri vietati 16)
 //quindi numero massimo è 100 - 16 = 84 numeri disponibili
