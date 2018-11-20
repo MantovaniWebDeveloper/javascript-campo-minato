@@ -31,7 +31,7 @@ var numeroUtente;
 //funzione gestione errore numeroUtente
 function errorNumber(numeroUtente){
   var controllo = false;
-  if (numeroUtente < 1 || numeroUtente > 100) {
+  if (numeroUtente < 1 || numeroUtente > 100  || isNaN(numeroUtente)) {
     controllo = true;
   }
   return controllo;
