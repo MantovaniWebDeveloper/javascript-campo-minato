@@ -9,13 +9,16 @@ function numeroRandom(numeroMin, numeroMax){
 
 //estraggo 16 numeri random da 1 a 100
 var numeroCpu
-for (var i = 0; i <=16; i++) {
+var arrayNumeriCpu = [];
+for (var i = 0; i < 16; i++) {
   numeroCpu = numeroRandom(1,100);
   console.log("giro " + i + " numero random " + numeroCpu)
+  arrayNumeriCpu.push(numeroCpu);
 }
+console.log("Array numeri della cpu: " + arrayNumeriCpu);
 //chiedo all'utente di inserire un numero da 1 a 100,
 //uno alla volta
-
+var arrayNumeriUtente = ["3","4","17","33",""];
 
 //confronto i numeri inseriti fino a trovare se c'è il numero che combacia
 //con quelli generati dalla cpu
