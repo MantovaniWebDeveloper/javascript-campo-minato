@@ -20,7 +20,7 @@ for (var i = 1; i <= 4; i++) {
   console.log("giro " + i + " numero utente " + numeroUtente);
   //confronto i numeri inseriti fino a trovare se c'è il numero che combacia
   //con quelli generati dalla cpu
-  if (arrayNumeriCpu[i] == numeroUtente || i > 2) {
+  if (arrayNumeriCpu.includes(numeroUtente) || i > 2) {
     //Se combacia la partita termina
     console.log("Eisto partita: TERMINATA");
     alert("terminata");
