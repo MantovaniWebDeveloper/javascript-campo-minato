@@ -1,6 +1,6 @@
 //chiedo all'utente il livello di dificolota
 var livelloDifficolta = parseInt(prompt("Seleziona il livello di difficolta: 0 - 1 - 2"));
-// creo una funzione dove gli passo  il range da 1 a 100 random
+// creo una funzione dove gli passo  il livello di livelloDifficolta
 function numeroRandom(difficolta){
   switch (difficolta) {
     case 0:
@@ -16,13 +16,29 @@ function numeroRandom(difficolta){
   }
   return numRandomRisultante;
 }
+//funzione per il controllo del livello di difficolta
+function errorNumberDifficolta(livelloDifficolta){
+  var controllo = false;
+  if (livelloDifficolta < 1 || livelloDifficolta > 2  || isNaN(livelloDifficolta)) {
+    controllo = true;
+  }
+  return controllo;
+}
 //estraggo 16 numeri random da 1 a 100
 var numeroCpu;
 var arrayNumeriCpu = [];
 for (var i = 1; i <= 16; i++) {
   numeroCpu = numeroRandom(livelloDifficolta);
-  console.log("giro " + i + " numero random " + numeroCpu)
-  arrayNumeriCpu.push(numeroCpu);
+  var erroreInserimentoDifficolta = errorNumberDifficolta(livelloDifficolta);
+
+  if(erroreInserimentoDifficolta) {
+    alert('Livello di difficoltà valida, inserisci numero da 0 a 2');
+  }
+  else {
+    console.log("giro " + i + " numero random " + numeroCpu)
+    arrayNumeriCpu.push(numeroCpu);
+  }
+
 }
 console.log("Array numeri della cpu: " + arrayNumeriCpu);
 //chiedo all'utente di inserire un numero da 1 a 100,
