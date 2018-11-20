@@ -1,12 +1,23 @@
-// creo una funzion dove gli passo  il rage da 1 a 100 random
+// creo una funzione dove gli passo  il range da 1 a 100 random
+var numeroMin = 1;
+var numeroMax = 100;
+
+function numeroRandom(numeroMin, numeroMax){
+  var numRandomRisultante = Math.floor(Math.random() * (numeroMax - numeroMin + 1) - numeroMin);
+  return numRandomRisultante;
+}
 
 //estraggo 16 numeri random da 1 a 100
-
+var numeroCpu
+for (var i = 0; i <=16; i++) {
+  numeroCpu = numeroRandom(1,100);
+  console.log("giro " + i + " numero random " + numeroCpu)
+}
 //chiedo all'utente di inserire un numero da 1 a 100,
 //uno alla volta
 
 
-//confronto i numeri inseriti fino a trovare se ce il numero che combacia
+//confronto i numeri inseriti fino a trovare se c'è il numero che combacia
 //con quelli generati dalla cpu
 
 //Se combaci la partita termina
