@@ -15,6 +15,8 @@ console.log("Array numeri della cpu: " + arrayNumeriCpu);
 //chiedo all'utente di inserire un numero da 1 a 100,
 //uno alla volta
 var numeroUtente;
+var punto = 1;
+var score = 0;
 for (var i = 1; i <= 4; i++) {
   numeroUtente = parseInt(prompt("inserisci un numero da 1 a 100"));
   console.log("giro " + i + " numero utente " + numeroUtente);
@@ -24,12 +26,16 @@ for (var i = 1; i <= 4; i++) {
     //Se combacia la partita termina
     console.log("Eisto partita: TERMINATA");
     alert("terminata");
+
   }
   else {
     console.log("Eisto partita: CONTINUA");
+    score += punto;
+    console.log("score " + score);
+
   }
 }
-
+console.log("score finale : " +score);
 
 
 //Se inserisce un numero vietato la partita termina (numeri vietati 16)
